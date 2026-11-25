@@ -34,3 +34,17 @@ Evaluated on `4,631` training rows (`< 2025-03-01`) and `1,369` validation rows 
 
 ## Limitations & Monitoring
 - `applications_train.csv` spans `2024-01-01` to `2025-06-30` and `applications_new.csv` spans `2025-07-01` to `2025-12-31`. Mean predicted default probability on the new set is `0.0791` vs. `0.0827` historical default rate; any macro shift or portfolio drift requires periodic monitoring and quarterly retraining once realized 12-month default labels mature.
+
+- ## Visual Diagnostics
+
+### Validation Expected Cost by Threshold
+![Validation Expected Cost by Probability Threshold](cost_vs_threshold.png)
+
+### ROC Curves on Temporal Validation Set
+![ROC Curves on Temporal Validation Set](roc_curves_validation.png)
+
+### Top Standardized Coefficients (Logistic Regression)
+![Top Standardized Coefficients](feature_importances.png)
+
+### New Applications Score Distribution (n = 1,800)
+![Predicted Default Probability Distribution](new_applications_score_dist.png)
